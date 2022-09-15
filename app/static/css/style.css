@@ -1,0 +1,191 @@
+/* We’ll set some colors and center everything. */
+
+body {
+    background: #4c268f;
+    color: orange;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+.content
+{
+    padding: 7cm;
+}
+  
+form
+{
+    margin: auto; 
+    width: 710px; 
+}
+  
+.headerline {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 1000;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+}
+
+.urlInput
+{
+    color: black;
+    text-align: center;
+    height: 0.6cm;
+    width: 20cm;
+    border: 2px solid black;
+    position: relative;
+    
+}
+
+.submitButton
+{
+    color: black;
+    top: 0.8cm;
+    background-color: orange;
+    text-align: center;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 1000;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    height: 1cm;
+    width: 3cm;
+    border: 2px solid black;
+    position: relative;
+    
+}
+
+
+.loadingheader
+{
+    font-family: "Avenir Next", sans-serif; 
+    font-weight: 1000;
+    font-size: 23px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    padding: 4.5cm;
+}
+
+
+
+
+.loader
+{
+    margin: 80px auto;
+    padding: 7cm;
+    width: 70vw;
+    height: 70vh;
+    overflow: hidden;
+    position: absolute;
+}
+
+.loader>div{
+    height: 50px;
+    width: 50px;
+    border: 15px solid #45474b;
+    border-top-color: orange;
+    position: absolute;
+    margin: auto;
+    top: 0.7cm;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+.ratioImageHeader
+{
+    position: absolute;
+    padding: 5cm;
+    
+
+}
+
+.ratioImage
+{
+    position: absolute;
+    padding: 7cm;
+    height: 10cm;
+    width: 10cm;
+
+}
+
+
+.positiveWCHeader
+{
+    position: absolute;
+    padding: 1cm;
+    left: 5.2cm;
+}
+
+.positiveWCImage
+{
+    position: absolute;
+    padding: 3cm;
+    height: 10cm;
+    width: 10cm;
+    left: 2cm;
+
+}
+
+.positiveWordsHeader
+{
+    position: absolute;
+    padding: 14cm;
+    left: -10.5cm;
+
+}
+
+.positivePiechart
+{
+    position: absolute;
+    padding: 16cm;
+    height: 10cm;
+    width: 10cm;
+    left: -11cm;
+}
+
+.negativeWCHeader
+{
+    position: absolute;
+    padding: 1cm;
+    right: 5.2cm;
+}
+
+.negativeWCImage
+{
+    position: absolute;
+    padding: 3cm;
+    height: 10cm;
+    width: 10cm;
+    right: 2cm;
+
+}
+
+.negativeWordsHeader
+{
+    position: absolute;
+    padding: 14cm;
+    right: -10.5cm;
+
+}
+
+.negativePiechart
+{
+    position: absolute;
+    padding: 16cm;
+    height: 10cm;
+    width: 10cm;
+    right: -11cm;
+}

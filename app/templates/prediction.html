@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#128513; Amazon Product Reviews Sentimental Analysis &#128533;</title>
+</head>
+
+
+<body>
+    <h1 class="results"><b>Results</b></h1>
+
+    <h3 class="ratioImageHeader"><b>Ratio Between Positive And Negative Sentiments</b></h2>
+    <img class="ratioImage" src="{{url_for('static', filename='images/ratio_latest.jpeg')}}" />
+
+    <h3 class="positiveWCHeader"><b>WordClouds For Positive Reviews</b></h2>
+    <img class="positiveWCImage" src="{{url_for('static', filename='images/wc_pos_rev_latest.png')}}" />
+
+    <h3 class="positiveWordsHeader"><b>Top 20 Most Frequently Appeared Words In Positive Reviews</b></h2>
+    <img class="positivePiechart" src="{{url_for('static', filename='images/top_20_pos_latest.png')}}" />
+
+    <h3 class="negativeWCHeader"><b>WordClouds For Negative Reviews</b></h2>
+    <img class="negativeWCImage" src="{{url_for('static', filename='images/wc_neg_rev_latest.png')}}" />
+
+    <h3 class="negativeWordsHeader"><b>Top 20 Most Frequently Appeared Words In Negative Reviews</b></h2>
+    <img class="negativePiechart" src="{{url_for('static', filename='images/top_20_neg_latest.png')}}" /> 
+
+
+</body>
+
+
+</html>
+
