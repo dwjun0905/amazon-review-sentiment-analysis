@@ -50,16 +50,6 @@ def scrape_webpage(temp_url):
                     'a', {'data-hook': 'review-title'}).text
                 review_body = item.find(
                     'span', {'data-hook': 'review-body'}).text.strip()
-                # star_rating = float(item.find('i', {
-                #     'data-hook': 'review-star-rating'}).text.replace('out of 5 stars', '').strip())
-                # try:
-                #     vote = item.find(
-                #         'span', {'data-hook': 'helpful-vote-statement'}).text
-                #     vote = vote.split(" ")[0]
-                #     if vote == 'One':
-                #         vote = 1
-                # except:
-                #     vote = 0
                 verified = item.find(
                     'span', {'data-hook': 'avp-badge'}).text.strip()
                 if verified == 'Verified Purchase':
@@ -67,22 +57,8 @@ def scrape_webpage(temp_url):
                 else:
                     verifications.append(False)
 
-                # lang_detector = fasttext.load_model(os.path.join(MODEL_DIR,'lid.176.ftz'))
-                # review_title_lang = lang_detector.predict(review_title.strip(), k=1)
-                # review_body_lang = lang_detector.predict(review_body.strip(), k=1)
-
-                # if review_title_lang[0][0] == '__label__en' and review_body_lang[0][0] == '__label__en':
-                #     review_titles.append(review_title)
-                #     review_bodies.append(review_body)
-                #     #star_ratings.append(int(star_rating))
-                #     votes.append(int(vote))
-                # else:
-                #     print(review_title)
-                #     print(review_body)
-
                 review_titles.append(review_title)
                 review_bodies.append(review_body)
-                # votes.append(int(vote))
             print(page_num)
             page_num += 1
 
@@ -97,7 +73,6 @@ def scrape_webpage(temp_url):
     lang_detector = fasttext.load_model(os.path.join(MODEL_DIR, 'lid.176.ftz'))
     titles_to_remove = []
     bodies_to_remove = []
-    # votes_to_remove = []
 
     #i = 0
     for i in range(len(review_titles)):
@@ -145,36 +120,3 @@ def scrape_webpage(temp_url):
     else:
         print("No scraped Data... Return Nothing")
         return None
-
-
-# def main(url):
-#     json_res = scrape_webpage(url)
-#     data = pd.DataFrame.from_dict(json_res)
-#     data['review_titles'] = data['review_titles'].apply(
-#         lambda x: x.replace('\n', ''))
-
-#     # preprocessing the reviews and review titles
-
-
-if __name__ == "__main__":
-    # input later
-    url = f'https://www.amazon.ca/Logitech-Master-Performance-Ultra-Fast-Scrolling/product-reviews/B09HM94VDS/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews'
-
-    # start = time.time()
-    # json_res = scrape_webpage(url)  # use this when real deployment
-    #json_data = json.load(json_res)
-    # end = time.time()
-    # print((end-start)/60)
-    # save_as_json(json_res)
-    # print("Saved the Scraped Data!")
-
-    # data = pd.DataFrame.from_dict(json_res) # use this when real deployment
-    # data = data[data['review_bodies'].map(lambda x: x.isascii())]
-    # data = pd.read_json(os.path.join(DATA_DIR, 'data.json'))
-    # data['review_titles'] = data['review_titles'].apply(
-    #     lambda x: x.replace('\n', ''))
-
-    # should I add data everytime we have a new website??
-    # print(data.head(12))
-
-    scrape_webpage(url)
