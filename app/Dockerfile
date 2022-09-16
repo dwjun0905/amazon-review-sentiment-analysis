@@ -1,8 +1,7 @@
 FROM python:3.7.13
 COPY . /app
 WORKDIR /app
-RUN conda env create -f env.yml
-RUN conda activate amazon-reviews-sentimental-analysis
+RUN pip install -r requirements.txt
 # RUN python -m nltk.downloader punkt
 
 EXPOSE $PORT
