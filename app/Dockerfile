@@ -6,4 +6,4 @@ RUN pip install -r app/requirements.txt
 
 EXPOSE $PORT
 
-CMD gunicorn app:app --workers=4 --preload --bind 0.0.0.0:$PORT 
+CMD gunicorn app --workers=4 --preload --bind 0.0.0.0:$PORT 
