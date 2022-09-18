@@ -1,1 +1,1 @@
-app.static_folder = 'static'
+static_folder = 'static'
